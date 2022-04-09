@@ -10,6 +10,18 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ParcialII">
         <activity
+            android:name=".Registrarse"
+            android:exported="false" />
+        <activity
+            android:name=".IniciarS"
+            android:exported="false" />
+        <activity
+            android:name=".Editar"
+            android:exported="false" />
+        <activity
+            android:name=".Agregar"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
