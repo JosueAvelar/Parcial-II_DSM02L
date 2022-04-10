@@ -11,7 +11,6 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -44,7 +43,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
         // setting data to our recycler view item on below line.
         ModalRV courseRVModal = courseRVModalArrayList.get(position);
         holder.courseTV.setText(courseRVModal.getCourseName());
-        holder.coursePriceTV.setText("Rs. " + ModalRV.getCoursePrice());
+        holder.coursePriceTV.setText(courseRVModal.getCoursePrice());
         Picasso.get().load(courseRVModal.getCourseImg()).into(holder.courseIV);
         // adding animation to recycler view item on below line.
         setAnimation(holder.itemView, position);
@@ -72,8 +71,9 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         // creating variable for our image view and text view on below line.
-        private ImageView courseIV;
-        private TextView courseTV, coursePriceTV;
+        private final ImageView courseIV;
+        private final TextView courseTV;
+        private final TextView coursePriceTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
