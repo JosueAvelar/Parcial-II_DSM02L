@@ -3,14 +3,10 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/drawable/btnregresar.xml" value="0.1945" />
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/drawable/prgregresar.xml" value="0.1945" />
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/layout/activity_agregar.xml" value="0.209375" />
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/layout/activity_editar.xml" value="0.209375" />
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/layout/activity_iniciar_s.xml" value="0.1" />
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/layout/activity_main.xml" value="0.209375" />
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/layout/activity_main2.xml" value="0.209375" />
-        <entry key="..\:/Users/Josue/Desktop/Ciclo I 2022/DSM/Laboratorio/Parcial II_DSM02L/Parcial-II_DSM02L/app/src/main/res/layout/activity_registrarse.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/Parcial-II_DSM02L/app/src/main/res/layout/activity_add_course.xml" value="0.33" />
+        <entry key="..\:/Users/HP/Documents/GitHub/Parcial-II_DSM02L/app/src/main/res/layout/activity_agregar.xml" value="0.1" />
+        <entry key="..\:/Users/HP/Documents/GitHub/Parcial-II_DSM02L/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Users/HP/Documents/GitHub/Parcial-II_DSM02L/app/src/main/res/layout/rv_item.xml" value="0.18059777102330293" />
       </map>
     </option>
   </component>
