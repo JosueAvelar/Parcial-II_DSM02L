@@ -48,7 +48,6 @@
         android:text="Descripcion"
         android:textColor="@color/white" />
 
-    <!--text view for displaying course best suited for-->
     <TextView
         android:id="@+id/idTVSuitedFor"
         android:layout_width="match_parent"
@@ -60,7 +59,7 @@
         android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/idIVCourse"
         android:padding="3dp"
-        android:text="Suited for"
+        android:text="Marca"
         android:textColor="@color/white" />
 
     <TextView
