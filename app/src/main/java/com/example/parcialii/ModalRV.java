@@ -4,7 +4,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ModalRV implements Parcelable {
-    // creating variables for our different fields.
     private String courseName;
     private String courseDescription;
     private String coursePrice;
@@ -23,7 +22,6 @@ public class ModalRV implements Parcelable {
     }
 
 
-    // creating an empty constructor.
     public ModalRV() {
 
     }
@@ -50,7 +48,6 @@ public class ModalRV implements Parcelable {
         }
     };
 
-    // creating getter and setter methods.
     public String getCourseName() {
         return courseName;
     }

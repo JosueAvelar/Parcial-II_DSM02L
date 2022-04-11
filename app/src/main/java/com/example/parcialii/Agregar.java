@@ -40,14 +40,11 @@ public class Agregar extends AppCompatActivity {
         courseLinkEdt = findViewById(R.id.idEdtCourseLink);
         loadingPB = findViewById(R.id.idPBLoading);
         firebaseDatabase = FirebaseDatabase.getInstance();
-        // on below line creating our database reference.
         databaseReference = firebaseDatabase.getReference("Courses");
-        // adding click listener for our add course button.
         addCourseBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadingPB.setVisibility(View.VISIBLE);
-                // getting data from our edit text.
                 String courseName = courseNameEdt.getText().toString();
                 String courseDesc = courseDescEdt.getText().toString();
                 String coursePrice = coursePriceEdt.getText().toString();
@@ -55,23 +52,16 @@ public class Agregar extends AppCompatActivity {
                 String courseImg = courseImgEdt.getText().toString();
                 String courseLink = courseLinkEdt.getText().toString();
                 courseID = courseName;
-                // on below line we are passing all data to our modal class.
                 ModalRV courseRVModal = new ModalRV(courseID, courseName, courseDesc, coursePrice, bestSuited, courseImg, courseLink);
-                // on below line we are calling a add value event
-                // to pass data to firebase database.
                 databaseReference.addValueEventListener(new ValueEventListener() {
 
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        // on below line we are setting data in our firebase database.
                         databaseReference.child(courseID).setValue(courseRVModal);
-                        // displaying a toast message.
                         Toast.makeText(Agregar.this, "Course Added..", Toast.LENGTH_SHORT).show();
-                        // starting a main activity.
                         startActivity(new Intent(Agregar.this, MainActivity.class));
                     }
 
                     public void onCancelled(@NonNull DatabaseError error) {
-                        // displaying a failure message on below line.
                         Toast.makeText(Agregar.this, "Fail to add Course..", Toast.LENGTH_SHORT).show();
                     }
                 });

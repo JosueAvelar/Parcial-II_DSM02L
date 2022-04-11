@@ -20,8 +20,6 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Registrarse extends AppCompatActivity {
 
-    // creating variables for edit text and textview,
-    // firebase auth, button and progress bar.
     private TextInputEditText userNameEdt, passwordEdt, confirmPwdEdt;
     private TextView loginTV;
     private Button registerBtn;
@@ -33,7 +31,6 @@ public class Registrarse extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registrarse);
 
-        // initializing all our variables.
         userNameEdt = findViewById(R.id.idEdtUserName);
         passwordEdt = findViewById(R.id.idEdtPassword);
         loadingPB = findViewById(R.id.idPBLoading);
@@ -42,7 +39,6 @@ public class Registrarse extends AppCompatActivity {
         registerBtn = findViewById(R.id.idBtnRegister);
         mAuth = FirebaseAuth.getInstance();
 
-        // adding on click for login tv.
         loginTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -52,35 +48,27 @@ public class Registrarse extends AppCompatActivity {
             }
         });
 
-        // adding click listener for register button.
         registerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // hiding our progress bar.
                 loadingPB.setVisibility(View.VISIBLE);
 
-                // getting data fro =m our edit text.
                 String userName = userNameEdt.getText().toString();
                 String pwd = passwordEdt.getText().toString();
                 String cnfPwd = confirmPwdEdt.getText().toString();
 
-                // checking if the password and confirm password is equal or not.
                 if (!pwd.equals(cnfPwd)) {
                     Toast.makeText(Registrarse.this, "Please check both having same password..", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(userName) && TextUtils.isEmpty(pwd) && TextUtils.isEmpty(cnfPwd)) {
 
-                    // checking if the text fields are empty or not.
                     Toast.makeText(Registrarse.this, "Please enter your credentials..", Toast.LENGTH_SHORT).show();
                 } else {
 
-                    // on below line we are creating a new user by passing email and password.
                     mAuth.createUserWithEmailAndPassword(userName, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            // on below line we are checking if the task is success or not.
                             if (task.isSuccessful()) {
 
-                                // in on success method we are hiding our progress bar and opening a login activity.
                                 loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(Registrarse.this, "User Registered..", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent(Registrarse.this, IniciarS.class);
@@ -88,7 +76,6 @@ public class Registrarse extends AppCompatActivity {
                                 finish();
                             } else {
 
-                                // in else condition we are displaying a failure toast message.
                                 loadingPB.setVisibility(View.GONE);
                                 Toast.makeText(Registrarse.this, "Fail to register user..", Toast.LENGTH_SHORT).show();
                             }

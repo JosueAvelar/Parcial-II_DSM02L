@@ -48,7 +48,6 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        // initializing all our variables.
         courseRV = findViewById(R.id.idRVCourses);
         homeRL = findViewById(R.id.idRLBSheet);
         loadingPB = findViewById(R.id.idPBLoading);
@@ -56,58 +55,41 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
         firebaseDatabase = FirebaseDatabase.getInstance();
         mAuth = FirebaseAuth.getInstance();
         courseRVModalArrayList = new ArrayList<>();
-        // on below line we are getting database reference.
         databaseReference = firebaseDatabase.getReference("Courses");
-        // on below line adding a click listener for our floating action button.
         addCourseFAB.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // opening a new activity for adding a course.
                 Intent i = new Intent(MainActivity.this, Agregar.class);
                 startActivity(i);
             }
         });
-        // on below line initializing our adapter class.
         courseRVAdapter = new RVAdapter(courseRVModalArrayList, this, this::onCourseClick);
-        // setting layout malinger to recycler view on below line.
         courseRV.setLayoutManager(new LinearLayoutManager(this));
-        // setting adapter to recycler view on below line.
         courseRV.setAdapter(courseRVAdapter);
-        // on below line calling a method to fetch courses from database.
         getCourses();
     }
 
     private void getCourses() {
-        // on below line clearing our list.
         courseRVModalArrayList.clear();
-        // on below line we are calling add child event listener method to read the data.
         databaseReference.addChildEventListener(new ChildEventListener() {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                // on below line we are hiding our progress bar.
                 loadingPB.setVisibility(View.GONE);
-                // adding snapshot to our array list on below line.
                 courseRVModalArrayList.add(snapshot.getValue(ModalRV.class));
-                // notifying our adapter that data has changed.
                 courseRVAdapter.notifyDataSetChanged();
             }
 
             public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                // this method is called when new child is added
-                // we are notifying our adapter and making progress bar
-                // visibility as gone.
                 loadingPB.setVisibility(View.GONE);
                 courseRVAdapter.notifyDataSetChanged();
             }
             @Override
             public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-                // notifying our adapter when child is removed.
                 courseRVAdapter.notifyDataSetChanged();
                 loadingPB.setVisibility(View.GONE);
 
             }
 
             public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                // notifying our adapter when child is moved.
                 courseRVAdapter.notifyDataSetChanged();
                 loadingPB.setVisibility(View.GONE);
             }
@@ -120,21 +102,16 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
 
     @Override
     public void onCourseClick(int position) {
-        // calling a method to display a bottom sheet on below line.
         displayBottomSheet(courseRVModalArrayList.get(position));
     }
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
-        // adding a click listener for option selected on below line.
         int id = item.getItemId();
         switch (id) {
             case R.id.idLogOut:
-                // displaying a toast message on user logged out inside on click.
                 Toast.makeText(getApplicationContext(), "User Logged Out", Toast.LENGTH_LONG).show();
-                // on below line we are signing out our user.
                 mAuth.signOut();
-                // on below line we are opening our login activity.
                 Intent i = new Intent(MainActivity.this, IniciarS.class);
                 startActivity(i);
                 this.finish();
@@ -146,33 +123,27 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // on below line we are inflating our menu
-        // file for displaying our menu options.
         getMenuInflater().inflate(R.menu.menumain, menu);
         return true;
     }
 
     private void displayBottomSheet(ModalRV modal) {
-        // on below line we are creating our bottom sheet dialog.
         final BottomSheetDialog bottomSheetTeachersDialog = new BottomSheetDialog(this, R.style.BottomSheetDialogTheme);
-        // on below line we are inflating our layout file for our bottom sheet.
         View layout = LayoutInflater.from(this).inflate(R.layout.paginabtm, homeRL);
-        // setting content view for bottom sheet on below line.
+
         bottomSheetTeachersDialog.setContentView(layout);
-        // on below line we are setting a cancelable
+
         bottomSheetTeachersDialog.setCancelable(false);
         bottomSheetTeachersDialog.setCanceledOnTouchOutside(true);
-        // calling a method to display our bottom sheet.
+
         bottomSheetTeachersDialog.show();
-        // on below line we are creating variables for
-        // our text view and image view inside bottom sheet
-        // and initialing them with their ids.
+
         TextView courseNameTV = layout.findViewById(R.id.idTVCourseName);
         TextView courseDescTV = layout.findViewById(R.id.idTVCourseDesc);
         TextView suitedForTV = layout.findViewById(R.id.idTVSuitedFor);
         TextView priceTV = layout.findViewById(R.id.idTVCoursePrice);
         ImageView courseIV = layout.findViewById(R.id.idIVCourse);
-        // on below line we are setting data to different views on below line.
+
         courseNameTV.setText(modal.getCourseName());
         courseDescTV.setText(modal.getCourseDescription());
         suitedForTV.setText( modal.getBestSuitedFor());
@@ -181,23 +152,21 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
         Button viewBtn = layout.findViewById(R.id.idBtnVIewDetails);
         Button editBtn = layout.findViewById(R.id.idBtnEditCourse);
 
-        // adding on click listener for our edit button.
+
         editBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // on below line we are opening our EditCourseActivity on below line.
+
                 Intent i = new Intent(MainActivity.this, IniciarS.Editar.class);
-                // on below line we are passing our course modal
+
                 i.putExtra("course", modal);
                 startActivity(i);
             }
         });
-        // adding click listener for our view button on below line.
+
         viewBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // on below line we are navigating to browser
-                // for displaying course details from its url
                 Intent i = new Intent(Intent.ACTION_VIEW);
                 i.setData(Uri.parse(modal.getCourseLink()));
                 startActivity(i);

@@ -17,13 +17,11 @@ import java.util.ArrayList;
 
 
 public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
-    // creating variables for our list, context, interface and position.
     private ArrayList<ModalRV> courseRVModalArrayList;
     private Context context;
     private CourseClickInterface courseClickInterface;
     int lastPos = -1;
 
-    // creating a constructor.
     public RVAdapter(ArrayList<ModalRV> courseRVModalArrayList, Context context, CourseClickInterface courseClickInterface) {
         this.courseRVModalArrayList = courseRVModalArrayList;
         this.context = context;
@@ -33,19 +31,16 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
     @NonNull
     @Override
     public RVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        // inflating our layout file on below line.
         View view = LayoutInflater.from(context).inflate(R.layout.rv_item, parent, false);
         return new ViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RVAdapter.ViewHolder holder, int position) {
-        // setting data to our recycler view item on below line
         ModalRV courseRVModal = courseRVModalArrayList.get(position);
         holder.courseTV.setText(courseRVModal.getCourseName());
         holder.coursePriceTV.setText(courseRVModal.getCoursePrice());
         Picasso.get().load(courseRVModal.getCourseImg()).into(holder.courseIV);
-        // adding animation to recycler view item on below line.
         setAnimation(holder.itemView, position);
         holder.courseIV.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -70,21 +65,18 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
     }
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
-        // creating variable for our image view and text view on below line.
         private final ImageView courseIV;
         private final TextView courseTV;
         private final TextView coursePriceTV;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            // initializing all our variables on below line.
             courseIV = itemView.findViewById(R.id.idIVCourse);
             courseTV = itemView.findViewById(R.id.idTVCOurseName);
             coursePriceTV = itemView.findViewById(R.id.idTVCousePrice);
         }
     }
 
-    // creating a interface for on click
     public interface CourseClickInterface {
         void onCourseClick(int position);
     }
