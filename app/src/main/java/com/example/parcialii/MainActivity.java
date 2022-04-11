@@ -156,7 +156,7 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
         // on below line we are creating our bottom sheet dialog.
         final BottomSheetDialog bottomSheetTeachersDialog = new BottomSheetDialog(this, R.style.BottomSheetDialogTheme);
         // on below line we are inflating our layout file for our bottom sheet.
-        View layout = LayoutInflater.from(this).inflate(R.layout.bottom_sheet_layout, homeRL);
+        View layout = LayoutInflater.from(this).inflate(R.layout.paginabtm, homeRL);
         // setting content view for bottom sheet on below line.
         bottomSheetTeachersDialog.setContentView(layout);
         // on below line we are setting a cancelable

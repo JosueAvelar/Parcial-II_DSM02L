@@ -40,7 +40,7 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull RVAdapter.ViewHolder holder, int position) {
-        // setting data to our recycler view item on below line.
+        // setting data to our recycler view item on below line
         ModalRV courseRVModal = courseRVModalArrayList.get(position);
         holder.courseTV.setText(courseRVModal.getCourseName());
         holder.coursePriceTV.setText(courseRVModal.getCoursePrice());
