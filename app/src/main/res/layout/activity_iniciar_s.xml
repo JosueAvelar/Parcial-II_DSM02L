@@ -7,7 +7,6 @@
     android:layout_height="match_parent"
     android:background="@color/black_shade_1"
     tools:context=".IniciarS">
-
     <!--edit text for user name-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idTILUserName"
@@ -17,7 +16,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="140dp"
         android:layout_marginEnd="20dp"
-        android:hint="Enter User Name"
+        android:hint="Ingrese el usuario"
         android:padding="5dp"
         android:textColorHint="@color/white"
         app:hintTextColor="@color/white">
@@ -34,7 +33,6 @@
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--edit text for password-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idTILPassword"
         style="@style/LoginTextInputLayoutStyle"
@@ -44,7 +42,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="40dp"
         android:layout_marginEnd="20dp"
-        android:hint="Enter your Password"
+        android:hint="Ingrese la contraseña"
         android:padding="5dp"
         android:textColorHint="@color/white"
         app:hintTextColor="@color/white">
@@ -61,7 +59,6 @@
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--button for login-->
     <Button
         android:id="@+id/idBtnLogin"
         android:layout_width="match_parent"
@@ -71,11 +68,10 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/btnregresar"
-        android:text="Login"
+        android:text="Ingresar"
         android:textAllCaps="false"
         />
 
-    <!--text view for creating a new account-->
     <TextView
         android:id="@+id/idTVNewUser"
         android:layout_width="match_parent"
@@ -84,13 +80,12 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="New User ? Register Here"
+        android:text="¿Nuevo usuario? Registrarse aqui"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
-    <!--progress-bar for loading indicator-->
     <ProgressBar
         android:id="@+id/idPBLoading"
         android:layout_width="wrap_content"

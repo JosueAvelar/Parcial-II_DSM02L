@@ -7,7 +7,6 @@
     android:background="@color/black_shade_1"
     android:padding="4dp">
 
-    <!--text view for displaying course name-->
     <TextView
         android:id="@+id/idTVCourseName"
         android:layout_width="match_parent"
@@ -17,12 +16,10 @@
         android:layout_marginEnd="3dp"
         android:layout_marginBottom="3dp"
         android:padding="4dp"
-        android:text="Course Name"
+        android:text="Modelo"
         android:textColor="@color/white"
         android:textSize="15sp"
         android:textStyle="bold" />
-
-    <!--image view for displaying course image-->
     <ImageView
         android:id="@+id/idIVCourse"
         android:layout_width="100dp"
@@ -36,7 +33,6 @@
         android:padding="4dp"
         android:src="@drawable/ic_launcher_background" />
 
-    <!--text view for displaying course description-->
     <TextView
         android:id="@+id/idTVCourseDesc"
         android:layout_width="match_parent"
@@ -49,7 +45,7 @@
         android:layout_toEndOf="@id/idIVCourse"
         android:layout_toRightOf="@id/idIVCourse"
         android:padding="3dp"
-        android:text="Description"
+        android:text="Descripcion"
         android:textColor="@color/white" />
 
     <!--text view for displaying course best suited for-->
@@ -67,7 +63,6 @@
         android:text="Suited for"
         android:textColor="@color/white" />
 
-    <!--text view for displaying course price-->
     <TextView
         android:id="@+id/idTVCoursePrice"
         android:layout_width="match_parent"
@@ -79,7 +74,7 @@
         android:layout_marginBottom="4dp"
         android:layout_toRightOf="@id/idIVCourse"
         android:padding="3dp"
-        android:text="Price"
+        android:text="Precio"
         android:textColor="@color/white"
         android:textSize="18sp"
         android:textStyle="bold" />
@@ -92,24 +87,22 @@
         android:orientation="horizontal"
         android:weightSum="2">
 
-        <!--button for editing course-->
         <Button
             android:id="@+id/idBtnEditCourse"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
-            android:text="Edit Course"
+            android:text="Editar"
             android:textAllCaps="false" />
 
-        <!--button for viewing course details-->
         <Button
             android:id="@+id/idBtnVIewDetails"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_margin="6dp"
             android:layout_weight="1"
-            android:text="View Details"
+            android:text="Mirar detalles"
             android:textAllCaps="false" />
 
     </LinearLayout>

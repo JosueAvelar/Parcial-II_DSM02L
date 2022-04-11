@@ -17,7 +17,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!--edit text for adding a course name-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILCourseName"
                 style="@style/LoginTextInputLayoutStyle"
@@ -26,7 +25,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Name"
+                android:hint="Ingrese el modelo"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
@@ -43,7 +42,6 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a course price-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILCoursePrice"
                 style="@style/LoginTextInputLayoutStyle"
@@ -52,7 +50,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Price"
+                android:hint="Ingrese el precio"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:boxStrokeColor="@color/purple_200"
@@ -97,7 +95,6 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-            <!--edit text for adding a course image link-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILCourseImageLink"
                 style="@style/LoginTextInputLayoutStyle"
@@ -106,7 +103,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Image Link"
+                android:hint="Ingrese el link de la imagen"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
@@ -149,8 +146,6 @@
                     android:textSize="14sp" />
             </com.google.android.material.textfield.TextInputLayout>
 
-
-            <!--edit text for adding a course description-->
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/idTILCourseDescription"
                 style="@style/LoginTextInputLayoutStyle"
@@ -159,7 +154,7 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
-                android:hint="Enter Course Description"
+                android:hint="Agrege una descripcion"
                 android:padding="5dp"
                 android:textColorHint="@color/white"
                 app:hintTextColor="@color/white">
@@ -182,7 +177,6 @@
                 android:orientation="horizontal"
                 android:weightSum="2">
 
-                <!--button for updating a new course-->
                 <Button
                     android:id="@+id/idBtnAddCourse"
                     android:layout_width="0dp"
@@ -193,10 +187,10 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/btnregresar"
-                    android:text="Update Your \n Course"
+                    android:text="Cambiar"
                     android:textAllCaps="false" />
 
-                <!--button for deleting a course-->
+
                 <Button
                     android:id="@+id/idBtnDeleteCourse"
                     android:layout_width="0dp"
@@ -207,13 +201,12 @@
                     android:layout_marginBottom="10dp"
                     android:layout_weight="1"
                     android:background="@drawable/btnregresar"
-                    android:text="Delete Your \n Course"
+                    android:text="Eliminar"
                     android:textAllCaps="false" />
 
             </LinearLayout>
         </LinearLayout>
 
-        <!--progress bar for displaying a loading indicator-->
         <ProgressBar
             android:id="@+id/idPBLoading"
             android:layout_width="wrap_content"

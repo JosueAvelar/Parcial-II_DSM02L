@@ -8,7 +8,6 @@
     android:background="@color/black_shade_1"
     tools:context=".Registrarse">
 
-    <!--edit text for user name-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idTILUserName"
         style="@style/LoginTextInputLayoutStyle"
@@ -17,7 +16,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="140dp"
         android:layout_marginEnd="20dp"
-        android:hint="Enter User Name"
+        android:hint="Ingrese usuario"
         android:padding="5dp"
         android:textColorHint="@color/white"
         app:hintTextColor="@color/white">
@@ -34,7 +33,6 @@
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--edit text for user password-->
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idTILPassword"
         style="@style/LoginTextInputLayoutStyle"
@@ -44,7 +42,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="Enter Your Password"
+        android:hint="Ingrese contraseña"
         android:padding="5dp"
         android:textColorHint="@color/white"
         app:hintTextColor="@color/white">
@@ -72,8 +70,6 @@
             android:textSize="14sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--edit text for confirmation of user password-->
-
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/idTILConfirmPassword"
         style="@style/LoginTextInputLayoutStyle"
@@ -83,14 +79,13 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
-        android:hint="Confirm Your Password"
+        android:hint="Confirmar contraseña"
         android:padding="5dp"
         android:textColorHint="@color/white"
         app:hintTextColor="@color/white">
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <!--button for creating user account.-->
     <Button
         android:id="@+id/idBtnRegister"
         android:layout_width="match_parent"
@@ -100,11 +95,8 @@
         android:layout_marginTop="40dp"
         android:layout_marginEnd="25dp"
         android:background="@drawable/btnregresar"
-        android:text="Register"
+        android:text="Registrarse"
         android:textAllCaps="false" />
-
-    <!--text view for displaying a text on
-        clicking we will open a login page-->
     <TextView
         android:id="@+id/idTVLoginUser"
         android:layout_width="match_parent"
@@ -113,13 +105,12 @@
         android:layout_marginTop="40dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="Already a User ? Login Here"
+        android:text="¿Ya tiene cuenta? Inicie sesion aqui"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="@color/white"
         android:textSize="18sp" />
 
-    <!--progress bar as a loading indicator-->
     <ProgressBar
         android:id="@+id/idPBLoading"
         android:layout_width="wrap_content"
