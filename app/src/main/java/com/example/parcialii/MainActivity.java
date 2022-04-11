@@ -148,7 +148,7 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
     public boolean onCreateOptionsMenu(Menu menu) {
         // on below line we are inflating our menu
         // file for displaying our menu options.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
+        getMenuInflater().inflate(R.menu.menumain, menu);
         return true;
     }
 
@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.CourseC
             @Override
             public void onClick(View v) {
                 // on below line we are opening our EditCourseActivity on below line.
-                Intent i = new Intent(MainActivity.this, Editar.class);
+                Intent i = new Intent(MainActivity.this, IniciarS.Editar.class);
                 // on below line we are passing our course modal
                 i.putExtra("course", modal);
                 startActivity(i);

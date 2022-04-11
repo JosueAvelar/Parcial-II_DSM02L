@@ -17,7 +17,7 @@
             android:exported="false"
             android:label="Registrar" />
         <activity
-            android:name=".Editar"
+            android:name=".IniciarS$Editar"
             android:exported="false"
             android:label="Editar" />
         <activity
