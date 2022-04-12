@@ -13,7 +13,7 @@ public class ModalRV implements Parcelable {
     private String courseId;
 
 
-    public String getCourseId() {
+    public static String getCourseId() {
         return courseId;
     }
 
@@ -48,7 +48,7 @@ public class ModalRV implements Parcelable {
         }
     };
 
-    public String getCourseName() {
+    public static String getCourseName() {
         return courseName;
     }
 
@@ -56,7 +56,7 @@ public class ModalRV implements Parcelable {
         this.courseName = courseName;
     }
 
-    public String getCourseDescription() {
+    public static String getCourseDescription() {
         return courseDescription;
     }
 
@@ -64,7 +64,7 @@ public class ModalRV implements Parcelable {
         this.courseDescription = courseDescription;
     }
 
-    public String getCoursePrice() {
+    public static String getCoursePrice() {
         return coursePrice;
     }
 
@@ -72,7 +72,7 @@ public class ModalRV implements Parcelable {
         this.coursePrice = coursePrice;
     }
 
-    public String getBestSuitedFor() {
+    public static String getBestSuitedFor() {
         return bestSuitedFor;
     }
 
@@ -80,7 +80,7 @@ public class ModalRV implements Parcelable {
         this.bestSuitedFor = bestSuitedFor;
     }
 
-    public String getCourseImg() {
+    public static String getCourseImg() {
         return courseImg;
     }
 
@@ -88,7 +88,7 @@ public class ModalRV implements Parcelable {
         this.courseImg = courseImg;
     }
 
-    public String getCourseLink() {
+    public static String getCourseLink() {
         return courseLink;
     }
 
