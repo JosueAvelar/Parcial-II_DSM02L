@@ -42,7 +42,7 @@ public class Registrarse extends AppCompatActivity {
         loginTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // opening a login activity on clicking login text.
+
                 Intent i = new Intent(Registrarse.this, IniciarS.class);
                 startActivity(i);
             }

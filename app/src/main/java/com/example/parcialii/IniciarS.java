@@ -45,6 +45,7 @@ public class IniciarS extends AppCompatActivity {
         newUserTV = findViewById(R.id.idTVNewUser);
         mAuth = FirebaseAuth.getInstance();
         loadingPB = findViewById(R.id.idPBLoading);
+
         newUserTV.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
