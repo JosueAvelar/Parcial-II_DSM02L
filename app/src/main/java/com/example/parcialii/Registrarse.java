@@ -58,10 +58,10 @@ public class Registrarse extends AppCompatActivity {
                 String cnfPwd = confirmPwdEdt.getText().toString();
 
                 if (!pwd.equals(cnfPwd)) {
-                    Toast.makeText(Registrarse.this, "Please check both having same password..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registrarse.this, "Revise que las contraseñas esten iguales", Toast.LENGTH_SHORT).show();
                 } else if (TextUtils.isEmpty(userName) && TextUtils.isEmpty(pwd) && TextUtils.isEmpty(cnfPwd)) {
 
-                    Toast.makeText(Registrarse.this, "Please enter your credentials..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Registrarse.this, "Ingrese credenciales", Toast.LENGTH_SHORT).show();
                 } else {
 
                     mAuth.createUserWithEmailAndPassword(userName, pwd).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -70,14 +70,14 @@ public class Registrarse extends AppCompatActivity {
                             if (task.isSuccessful()) {
 
                                 loadingPB.setVisibility(View.GONE);
-                                Toast.makeText(Registrarse.this, "User Registered..", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Registrarse.this, "Usuario Registrado..", Toast.LENGTH_SHORT).show();
                                 Intent i = new Intent(Registrarse.this, IniciarS.class);
                                 startActivity(i);
                                 finish();
                             } else {
 
                                 loadingPB.setVisibility(View.GONE);
-                                Toast.makeText(Registrarse.this, "Fail to register user..", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(Registrarse.this, "Fallo en registro de usuario..", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });

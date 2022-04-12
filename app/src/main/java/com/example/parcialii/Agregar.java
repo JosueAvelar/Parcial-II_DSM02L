@@ -57,12 +57,12 @@ public class Agregar extends AppCompatActivity {
 
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         databaseReference.child(courseID).setValue(courseRVModal);
-                        Toast.makeText(Agregar.this, "Course Added..", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Agregar.this, "Carro agregado", Toast.LENGTH_SHORT).show();
                         startActivity(new Intent(Agregar.this, MainActivity.class));
                     }
 
                     public void onCancelled(@NonNull DatabaseError error) {
-                        Toast.makeText(Agregar.this, "Fail to add Course..", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Agregar.this, "Fallo en agregar", Toast.LENGTH_SHORT).show();
                     }
                 });
             }

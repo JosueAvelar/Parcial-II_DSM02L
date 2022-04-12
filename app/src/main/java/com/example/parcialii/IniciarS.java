@@ -54,14 +54,14 @@ public class IniciarS extends AppCompatActivity {
             }
         });
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loadingPB.setVisibility(View.VISIBLE);
                 String email = userNameEdt.getText().toString();
                 String password = passwordEdt.getText().toString();
                 if (TextUtils.isEmpty(email) && TextUtils.isEmpty(password)) {
-                    Toast.makeText(IniciarS.this, "Please enter your credentials..", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(IniciarS.this, "Por favor ingrese sus credenciales", Toast.LENGTH_SHORT).show();
                     return;
                 }
                 mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
@@ -75,7 +75,7 @@ public class IniciarS extends AppCompatActivity {
                             finish();
                         } else {
                             loadingPB.setVisibility(View.GONE);
-                            Toast.makeText(IniciarS.this, "Please enter valid user credentials..", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(IniciarS.this, "Ingrese credenciales validas..", Toast.LENGTH_SHORT).show();
                         }
                     }
                 });
