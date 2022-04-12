@@ -22,10 +22,11 @@
         <activity
             android:name=".Agregar"
             android:exported="false"
-            android:label="Agregar" /> <!-- login activity is set as launcher activity -->
+            android:label="Agregar" />
         <activity
             android:name=".IniciarS"
-            android:exported="true">
+            android:exported="true"
+            android:label="Iniciar Sesión">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,7 +35,7 @@
         </activity>
         <activity
             android:name=".MainActivity"
-            android:exported="false"></activity>
+            android:exported="false"/>
     </application>
 
 </manifest>
