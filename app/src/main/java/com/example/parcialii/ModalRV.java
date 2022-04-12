@@ -4,13 +4,13 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class ModalRV implements Parcelable {
-    private String courseName;
-    private String courseDescription;
-    private String coursePrice;
-    private String bestSuitedFor;
-    private String courseImg;
-    private String courseLink;
-    private String courseId;
+    private static String courseName;
+    private static String courseDescription;
+    private static String coursePrice;
+    private static String bestSuitedFor;
+    private static String courseImg;
+    private static String courseLink;
+    private static String courseId;
 
 
     public static String getCourseId() {
